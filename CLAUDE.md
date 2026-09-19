@@ -2,8 +2,9 @@
 
 Front-end demo of a gated alumni registration form for the Yale SOM Career Development
 Office. Read `CONTEXT.md` for the vocabulary (Allowed Domain, Verification Code, Verified
-Session, Registrant, Registration, Career Explorer) and use it in code and issues. `README.md`
-describes the layout and which backend decisions are deferred.
+Session, Registrant, Registration, Career Explorer) and use it in code and issues. `docs/DEVELOPMENT.md`
+describes the layout and which backend decisions are deferred; `README.md` is written for
+the developer of the Host Page and should stay short.
 
 - Package manager: pnpm. Next.js App Router, Tailwind v4, TypeScript.
 - Pure rules live in `src/domain/` and must stay free of React and browser APIs.
