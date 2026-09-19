@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "build:embed": "vite build"
+    "build:embed": "vite build",
+    "pack:embed": "vite build && cd dist-embed && zip -qr ../career-explorer-registration-$npm_package_version.zip . && echo \"wrote career-explorer-registration-$npm_package_version.zip\""
   },
   "dependencies": {
     "next": "16.3.4",

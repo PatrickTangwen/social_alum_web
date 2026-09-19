@@ -45,6 +45,11 @@ The Host Page needs three lines:
 Every placeholder present when the script runs is mounted; `CareerExplorerRegistration.mount(el)`
 mounts one added later.
 
+To hand the embed to the Host Page's developer, run `pnpm pack:embed`: it builds and writes
+`career-explorer-registration-<version>.zip` with the two files and
+[`INTEGRATION.md`](demo/public/INTEGRATION.md), the guide written for that developer (what
+to paste, Drupal library setup, what the form inherits, which colors can be overridden).
+
 What the embed's stylesheet does and does not do (see ADR-0001):
 
 - No Preflight, no `html`/`body` rules, no font-family, base size, line height, or text color.

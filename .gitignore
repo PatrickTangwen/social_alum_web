@@ -42,6 +42,8 @@ next-env.d.ts
 
 # embed build
 /dist-embed
+/career-explorer-registration-*.zip
 
 # output of the removed single-file build
 /dist-demo
+/career-explorer-registration-*/
