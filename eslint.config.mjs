@@ -12,8 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Output of `pnpm build:embed`.
+    // Output of `pnpm build:embed` and `pnpm pack:embed`, unzipped.
     "dist-embed/**",
+    "career-explorer-registration-*/**",
   ]),
 ]);
 

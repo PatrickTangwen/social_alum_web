@@ -29,12 +29,13 @@ pnpm build:embed
 ```
 
 Writes `dist-embed/career-explorer-registration.js` and `.css`, plus a stand-in Host Page
-(`index.html`, `host.css`, fonts) and `INTEGRATION.md` copied from `demo/public/` so the
-built files can be opened as they would be on the real site
+(`index.html`, `host.css`, fonts) copied from `demo/public/`, and `README.md` copied as
+`INTEGRATION.md`, so the built files can be opened as they would be on the real site
 (`python3 -m http.server 3001 --directory dist-embed`). `pnpm pack:embed` builds and zips
 that folder as `career-explorer-registration-<version>.zip` for handoff.
 
-The Host Page needs the three lines shown in the [README](../README.md). Every placeholder present when the script
+The Host Page needs the three lines shown in the [README](../README.md), which is the
+integration guide for the Host Page's developer. Every placeholder present when the script
 runs is mounted; `CareerExplorerRegistration.mount(el)` mounts one added later.
 
 What the embed's stylesheet does and does not do (see ADR-0001):
@@ -65,6 +66,7 @@ What the embed's stylesheet does and does not do (see ADR-0001):
 - `src/app/` — Next.js dev harness: a stand-in Host Page (`PageShell`, styled by
   `demo/public/host.css`) around the embed.
 - `demo/public/` — the stand-in Host Page for the built embed, copied into `dist-embed/`.
+- `README.md` — the integration guide for the Host Page's developer; also shipped in the zip.
 
 The embed has no visual language of its own beyond component chrome (light panels, thin
 borders, Yale Blue buttons by default); typography is the Host Page's.
