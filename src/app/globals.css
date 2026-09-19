@@ -1,0 +1,4 @@
+/* Development harness: the stand-in Host Page's styles, then the embed's own stylesheet,
+   loaded in the same order a real Host Page would load them. */
+@import "../../demo/public/host.css";
+@import "../embed/embed.css";

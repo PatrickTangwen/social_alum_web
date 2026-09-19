@@ -1,0 +1,54 @@
+/*
+ * Stylesheet of the Registration Embed.
+ *
+ * The embed sits inside the Host Page's own DOM and inherits that page's typography, so
+ * this file deliberately does not define page-level styles:
+ *
+ * - No Preflight and no html/body rules. Nothing here reaches outside `.ce-root`.
+ * - No font-family, base font-size, line-height, or text color. Text sizes are em-based,
+ *   so they scale with whatever size the Host Page gives the embed's container.
+ * - Only component colors (buttons, borders, panels, notices), each read from a `--ce-*`
+ *   custom property the Host Page can set; the value after the comma is the default.
+ * - Every utility class carries the `ce:` prefix so it cannot collide with Host Page
+ *   classes such as `.hidden` or `.block`, and the generated CSS is not wrapped in
+ *   `@layer`, so ordinary specificity decides against the Host Page's own rules.
+ * - Spacing between siblings uses `gap` on the parent, never `space-*` or `divide-*`: those
+ *   utilities select children through `:where()` at zero specificity and lose to a Host
+ *   Page reset such as `div { margin: 0 }`.
+ */
+
+@import "tailwindcss/theme.css" prefix(ce);
+@import "./embed-base.css";
+@import "tailwindcss/utilities.css" prefix(ce) source(none);
+
+@source "../components";
+@source "../embed";
+
+@theme inline {
+  --color-*: initial;
+  --font-*: initial;
+  --text-*: initial;
+  --breakpoint-*: initial;
+
+  /* Verification Codes are the only monospace text. */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Relative to the inherited size; no line-heights, those are inherited too. */
+  --text-xs: 0.75em;
+  --text-sm: 0.875em;
+  --text-2xl: 1.5em;
+  --text-3xl: 1.875em;
+
+  /* Component colors. Host Pages override them with `--ce-*` on any ancestor. */
+  --color-brand: var(--ce-brand, #00356b);
+  --color-brand-dark: var(--ce-brand-dark, #002a55);
+  --color-on-brand: var(--ce-on-brand, #ffffff);
+  --color-link: var(--ce-link, #286dc0);
+  --color-muted: var(--ce-muted, color-mix(in srgb, currentColor 65%, transparent));
+  --color-line: var(--ce-line, #d4d4d4);
+  --color-surface: var(--ce-surface, #ffffff);
+  --color-panel: var(--ce-panel, #f7f8fa);
+  --color-tint: var(--ce-tint, #e8eef5);
+  --color-error: var(--ce-error, #b3261e);
+  --color-success: var(--ce-success, #1f5c2a);
+}

@@ -1,0 +1,40 @@
+/*
+ * Minimal reset scoped to the embed root. Every selector has specificity (0,1,0): high
+ * enough to beat the Host Page's bare-element rules (`button`, `p`, `fieldset`, `ol`, ...),
+ * low enough to lose to the utilities imported after this file. Typography is left alone
+ * on purpose; only box model, list markers, and form-control defaults are normalized.
+ */
+
+.ce-root,
+.ce-root :where(*) {
+  box-sizing: border-box;
+}
+
+.ce-root :where(h2, p, ol, li, dl, dt, dd, form, fieldset, legend, label) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ce-root :where(ol) {
+  list-style: none;
+}
+
+.ce-root :where(legend) {
+  display: block;
+}
+
+.ce-root :where(button, input, select) {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+.ce-root :where(button) {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: center;
+  cursor: pointer;
+}

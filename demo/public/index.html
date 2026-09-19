@@ -1,0 +1,58 @@
+<!doctype html>
+<!--
+  Stand-in Host Page for the built Registration Embed. Everything except the two lines
+  marked "embed" belongs to the host. See README.md, "Embedding".
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join the Career Explorer | Yale SOM Career Development Office</title>
+    <meta
+      name="description"
+      content="Yale SOM and YSE alumni working in social impact can add themselves to the Career Explorer."
+    />
+    <link rel="stylesheet" href="./host.css" />
+    <!-- embed: stylesheet -->
+    <link rel="stylesheet" href="./career-explorer-registration.css" />
+  </head>
+  <body>
+    <nav aria-label="Breadcrumb" class="host-breadcrumb">
+      <ol class="host-container">
+        <li>Yale SOM</li>
+        <li aria-hidden="true">/</li>
+        <li>Career Development Office</li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page">Join the Career Explorer</li>
+      </ol>
+    </nav>
+
+    <header class="host-hero">
+      <div class="host-container">
+        <p class="host-eyebrow">Career Development Office</p>
+        <h1>Join the Career Explorer</h1>
+        <p>
+          Yale SOM and YSE alumni working in social impact can add themselves to the Career
+          Explorer. Verify your Yale email to get started.
+        </p>
+      </div>
+    </header>
+
+    <main class="host-container host-main">
+      <!-- embed: placeholder; the script mounts the form here -->
+      <div data-career-explorer-registration></div>
+    </main>
+
+    <footer class="host-footer">
+      <div class="host-container">
+        <p>
+          Social Impact Career Wayfinder · Yale School of Management &amp; School of the
+          Environment · 2026
+        </p>
+      </div>
+    </footer>
+
+    <!-- embed: script -->
+    <script src="./career-explorer-registration.js" defer></script>
+  </body>
+</html>
